@@ -1,30 +1,30 @@
 <div>
-    <h1>Welcome to the game!</h1>
+    <h2>Welcome to the game!</h2>
     @livewire('user-name')
 
     <div class="choices">
         <div>
             <h3 class="choices__head">Your choice:</h3>
             <div>
-                @include('livewire.partials.user-button', ['buttonName' => 'Rock'])
+                @include('livewire.partials.user-button', ['buttonName' => \App\Http\Livewire\Game::ROCK])
             </div>
             <div>
-                @include('livewire.partials.user-button', ['buttonName' => 'Papper'])
+                @include('livewire.partials.user-button', ['buttonName' => \App\Http\Livewire\Game::PAPER])
             </div>
             <div>
-                @include('livewire.partials.user-button', ['buttonName' => 'Scissors'])
+                @include('livewire.partials.user-button', ['buttonName' => \App\Http\Livewire\Game::SCISSORS])
             </div>
         </div>
         <div>
             <h3 class="choices__head">Opponent choice:</h3>
             <div>
-                @include('livewire.partials.opponent-button', ['buttonName' => 'Rock'])
+                @include('livewire.partials.opponent-button', ['buttonName' => \App\Http\Livewire\Game::ROCK])
             </div>
             <div>
-                @include('livewire.partials.opponent-button', ['buttonName' => 'Papper'])
+                @include('livewire.partials.opponent-button', ['buttonName' => \App\Http\Livewire\Game::PAPER])
             </div>
             <div>
-                @include('livewire.partials.opponent-button', ['buttonName' => 'Scissors'])
+                @include('livewire.partials.opponent-button', ['buttonName' => \App\Http\Livewire\Game::SCISSORS])
             </div>
 
             Opponent choice hidden

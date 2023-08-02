@@ -6,12 +6,16 @@ use Livewire\Component;
 
 class Game extends Component
 {
-    private const OPTIONS = ['Rock', 'Papper', 'Scissors'];
+    public const ROCK = 'rock';
+    public const PAPER = 'paper';
+    public const SCISSORS = 'scissors';
+
+    private const OPTIONS = ['Rock', 'Paper', 'Scissors'];
    
     private const BEATS = [
-        'Rock' => 'Scissors',
-        'Scissors' => 'Papper',
-        'Papper' => 'Rock'
+        self::ROCK => self::SCISSORS,
+        self::SCISSORS => self::PAPER,
+        self::PAPER => self::ROCK,
     ];
    
     public ?string $userChoice;
@@ -49,6 +53,6 @@ class Game extends Component
     public function getRandomChoice(): string
     {
         $randomIndex = random_int(0, 2);
-        return self::OPTIONS[$randomIndex];
+        return [self::ROCK, self::PAPER, self::SCISSORS][$randomIndex];
     }
 }
