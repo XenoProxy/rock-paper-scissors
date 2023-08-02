@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{ asset('/build/assets/app-1501fe38.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('/build/assets/app-d0dc479b.css') }}"> 
+        <link rel="preload" as="style" href="{{ asset('/build/assets/app-d0dc479b.css') }}">
 
         <title>Rock Papper Scissors</title>
 

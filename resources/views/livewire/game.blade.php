@@ -29,5 +29,7 @@
 
             Opponent choice hidden
         </div>
-    </div>    
+    </div>   
+    
+    <p class="game-result">{{ $userResult }}</p>
 </div>
