@@ -10,7 +10,7 @@
     </head>
     <body>
         
-        @livewire('user-name')
+    @livewire('game')
 
         @livewireScripts
     </body>
