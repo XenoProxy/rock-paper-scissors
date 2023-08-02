@@ -10,6 +10,8 @@
     </head>
     <body>
         
+        @livewire('user-name')
+
         @livewireScripts
     </body>
 </html>
