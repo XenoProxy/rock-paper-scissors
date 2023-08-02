@@ -3,17 +3,17 @@
     @livewire('user-name')
 
     <div class="choices">
-        <h3 class="choices__head">Your choice:</h3>
         <div>
-            @include('livewire.partials.user-button', ['buttonName' => 'Rock'])
-        </div>
-        <div>
-            @include('livewire.partials.user-button', ['buttonName' => 'Papper'])
-        </div>
-        <div>
-            @include('livewire.partials.user-button', ['buttonName' => 'Scissors'])
+            <h3 class="choices__head">Your choice:</h3>
+            <div>
+                @include('livewire.partials.user-button', ['buttonName' => 'Rock'])
+            </div>
+            <div>
+                @include('livewire.partials.user-button', ['buttonName' => 'Papper'])
+            </div>
+            <div>
+                @include('livewire.partials.user-button', ['buttonName' => 'Scissors'])
+            </div>
         </div>
     </div>
-
-    Your choice: {{ $userChoice }}
 </div>

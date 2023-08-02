@@ -1,6 +1,8 @@
 <button wire:click="choose('{{ $buttonName }}')"
     @if($userChoice) disabled @endif
-    class="btn"
-    >
+    class="btn btn-user
+    @if($userChoice === $buttonName) btn_choosen @endif
+    @if($userChoice) btn_disabled @else btn-user_active @endif
+    ">
     {{ $buttonName }}
 </button>
