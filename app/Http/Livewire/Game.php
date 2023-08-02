@@ -10,30 +10,34 @@ class Game extends Component
     public const PAPER = 'paper';
     public const SCISSORS = 'scissors';
 
-    private const OPTIONS = ['Rock', 'Paper', 'Scissors'];
-   
     private const BEATS = [
         self::ROCK => self::SCISSORS,
         self::SCISSORS => self::PAPER,
         self::PAPER => self::ROCK,
     ];
-   
+
+    private const WIN = 'win';
+    private const LOSS = 'loss';
+    private const DRAW = 'draw';
+
     public ?string $userChoice;
     public ?string $opponentChoice;
     public ?string $userResult;
+    public ?string $opponentResult;
 
-    public bool $gameEnded = false;
+    public bool $isGameEnded = false;
 
-    public function mount()
+    public function mount(): void
     {
         $this->opponentChoice = $this->getRandomChoice();
     }
 
-    public function choose($choice)
+    public function choose($choice): void
     {
         $this->userChoice = $choice;
         $this->userResult = $this->getUserResult();
-        $this->gameEnded = true;
+        $this->opponentResult = $this->getOpponentResult();
+        $this->isGameEnded = true;
     }
 
     public function render()
@@ -41,18 +45,28 @@ class Game extends Component
         return view('livewire.game');
     }
 
-    public function getUserResult()
-    {
-        if($this->userChoice === $this->opponentChoice){
-            return 'draw';
-        }
-        
-        return self::BEATS[$this->userChoice] === $this->opponentChoice ? 'win' : 'loss';
-    }
-
-    public function getRandomChoice(): string
+    private function getRandomChoice(): string
     {
         $randomIndex = random_int(0, 2);
         return [self::ROCK, self::PAPER, self::SCISSORS][$randomIndex];
+    }
+
+    private function getUserResult(): string
+    {
+        return $this->getResult($this->userChoice, $this->opponentChoice);
+    }
+
+    private function getOpponentResult(): string
+    {
+        return $this->getResult($this->opponentChoice, $this->userChoice);
+    }
+
+    private function getResult(string $choice1, string $choice2): string
+    {
+        if ($choice1 === $choice2) {
+            return self::DRAW;
+        }
+
+        return self::BEATS[$choice1] === $choice2 ? self::WIN : self::LOSS;
     }
 }
