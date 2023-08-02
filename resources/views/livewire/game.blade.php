@@ -15,5 +15,19 @@
                 @include('livewire.partials.user-button', ['buttonName' => 'Scissors'])
             </div>
         </div>
-    </div>
+        <div>
+            <h3 class="choices__head">Opponent choice:</h3>
+            <div>
+                @include('livewire.partials.opponent-button', ['buttonName' => 'Rock'])
+            </div>
+            <div>
+                @include('livewire.partials.opponent-button', ['buttonName' => 'Papper'])
+            </div>
+            <div>
+                @include('livewire.partials.opponent-button', ['buttonName' => 'Scissors'])
+            </div>
+
+            Opponent choice hidden
+        </div>
+    </div>    
 </div>
