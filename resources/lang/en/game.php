@@ -13,4 +13,6 @@ return [
     'result_win' => 'You WIN',
     'result_loss' => 'You Loose',
     'result_draw' => 'Draw',
+    'lobby_new' => 'Start New Game',
+    'list_head' => 'Join to Existing Game',
 ];
