@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Lobby;
+use App\Http\Livewire\Game;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' , App\Http\Livewire\Lobby::class)->name('lobby');
+Route::get('/game{game}', App\Http\Livewire\Game::class)->name('game');
